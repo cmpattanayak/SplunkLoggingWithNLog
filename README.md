@@ -37,3 +37,9 @@ NLog.LogManager.Configuration = nlogConfiguration;
 GlobalDiagnosticsContext.Set("application", Configuration["Application"]);
 GlobalDiagnosticsContext.Set("environment", AppEnvironment);
 ```
+### Important Tip
+If we do not Flush LogManager, we may not be able to log all events properly and sometime we may end up logging nothing. So, it is very important to Flush the NLog LogManager after use.
+
+```
+NLog.LogManager.Shutdown();
+```
