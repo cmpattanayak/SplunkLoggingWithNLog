@@ -28,7 +28,7 @@ namespace SplunkLoggingWithNLog
                     config.SetBasePath(Directory.GetCurrentDirectory())
                           .AddEnvironmentVariables()
                           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-
+                    //Programatically add Splunk Url, Header Layout and Custom Rule
                     ConfigureSplunkLogging(config.Build());
                 })
                 .ConfigureLogging(logging =>
